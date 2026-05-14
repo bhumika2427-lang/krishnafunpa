@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Fun Water Park - Splash into Fun! 🌊💦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #00b4d8, #0077b6, #90e0ef, #48cae4);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #fff;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 119, 182, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            color: #ffd23f;
+            text-shadow: 3px 3px 0 #ff6b35;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffd23f;
+            text-shadow: 0 0 10px #ffd23f;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.3"/><stop offset="70%" stop-color="%2300b4d8" stop-opacity="0.7"/></radialGradient><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="15" fill="url(%23a)" opacity="0.6"/><circle cx="80" cy="60" r="12" fill="url(%23a)" opacity="0.4"/><circle cx="40" cy="80" r="18" fill="url(%23a)" opacity="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23wave)"/><path d="M0,300Q250,200 500,300T1000,300V600H0Z" fill="%23ff6b35" opacity="0.8"/></svg>') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 4px 4px 0 #ff6b35, 8px 8px 0 #ffd23f;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .price-tag {
+            background: linear-gradient(45deg, #ff6b35, #f48c06);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(255,107,53,0.4);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255,107,53,0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 20px 40px rgba(255,107,53,0.6); }
+            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255,107,53,0.4); }
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ffd23f, #ff9f1c);
+            color: #fff;
+            padding: 1.2rem 3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255,210,63,0.4);
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255,210,63,0.6);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.25);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffd23f;
+            font-family: 'Bangers', cursive;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bangers', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #fff, #ffd23f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 2px solid rgba(255,255,255,0.3);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffd23f;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(255,210,63,0.5);
+            transform: scale(1.02);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b35, #f48c06);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.4);
+        }
+
+        /* Contact Cards */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.25);
+        }
+
+        .phone-number {
+            font-size: 2rem;
+            color: #ffd23f;
+            font-weight: 700;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        /* Location */
+        .location-map {
+            height: 400px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-map::before {
+            content: "📍 9925+PQR, Krishna Marriage Lawn and Fun Park, Kathogar, Uttar Pradesh 208021";
+            font-size: 1.2rem;
+            text-align: center;
+            animation: slideUp 3s ease-in-out infinite;
+        }
+
+        @keyframes slideUp {
+            0%, 100% { transform: translateY(20px); opacity: 0.7; }
+            50% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .insta { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+        .facebook { background: linear-gradient(45deg, #3b5998, #4267b2); }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 119, 182, 0.9);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .price-tag { font-size: 2rem; padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Active section highlight */
+        section.active {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            margin: 2rem;
+            padding: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌊 KRISHNA FUN 💦</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#social">Follow Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>KRISHNA FUN WATER PARK</h1>
+        <p>Splash into fun at Kathogar's most exciting water adventure!</p>
+        <div class="price-tag">₹150/person</div>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Unlimited Thrills • Instant Confirmation</p>
+        <a href="#booking" class="cta-button">🚀 Book Now</a>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">50,000+</div>
+            <div>Happy Visitors</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">250+</div>
+            <div>Attractions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div>Satisfaction</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">365</div>
+            <div>Days Open</div>
+        </div>
+    </div>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <h2 class="section-title">COMPLETE BOOKING FORM</h2>
+        <div class="booking-form">
+            <div class="price-display">
+                <h3 style="text-align: center; color: #ffd23f; font-size: 2rem;">₹150/person • Instant Confirmation</h3>
+            </div>
+            
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">👤 Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp">📱 WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="98XXXXXXXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="visitDate">📅 Visit Date</label>
+                    <input type="date" id="visitDate" name="visitDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="people">👥 Number of People</label>
+                    <select id="people" name="people" required>
+                        <option value="">Select number</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5 People</option>
+                        <option value="6">6+ People</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">📲 Send Booking to Owner (Free)</button>
+            </form>
+
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fas fa-phone" style="font-size: 2rem; color: #00ff88; margin-bottom: 1rem;"></i>
+                    <div class="phone-number" onclick="window.open('tel:8009919667')">80099 19667</div>
+                    <button class="cta-button" style="padding: 0.8rem 1.5rem; font-size: 1rem;" onclick="window.open('tel:8009919667')">Call Now</button>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone" style="font-size: 2rem; color: #00ff88; margin-bottom: 1rem;"></i>
+                    <div class="phone-number" onclick="window.open('tel:7052560189')">70525 60189</div>
+                    <button class="cta-button" style="padding: 0.8rem 1.5rem; font-size: 1rem;" onclick="window.open('tel:7052560189')">Call Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+        <h2 class="section-title">📍 LOCATION</h2>
+        <div style="text-align: center; font-size: 1.5rem; margin-bottom: 2rem;">
+            <strong>Easy to Reach!</strong><br>
+            Just 20 mins from Kanpur city center! 🚗<br>
+            Free Parking Available 🅿️ | Food Court 🍔
+        </div>
+        <div class="location-map">
+            <!-- Google Maps will go here -->
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section id="social">
+        <h2 class="section-title">Follow Our Fun! 📸</h2>
+        <p style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">
+            See real visitor experiences & latest updates
+        </p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/krishna_fun_park" target="_blank" class="social-btn insta" title="@krishna_fun_park">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/193NM4QCXD/" target="_blank" class="social-btn facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Krishna Fun Water Park. All rights reserved. | Kathogar, UP</p>
+        <p>Book: <a href="tel:8009919667" style="color: #ffd23f;">80099 19667</a> | <a href="tel:7052560189" style="color: #ffd23f;">70525 60189</a></p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            data.totalAmount = data.people * 150;
+            
+            // Show success message
+            alert(`🎉 Booking Confirmed!\n\nName: ${data.fullName}\nWhatsApp: ${data.whatsapp}\nDate: ${data.visitDate}\nPeople: ${data.people}\nTotal: ₹${data.totalAmount}\n\nOwner will contact you instantly! 💦`);
+            
+            // Here you would typically send data to server
+            console.log('Booking Data:', data);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Set default date to next available weekend
+        const today = new Date();
+        const nextWeekend = new Date(today);
+        nextWeekend.setDate(today.getDate() + (6 - today.getDay() + 7) % 7 + 1);
+        document.getElementById('visitDate').valueAsDate = nextWeekend;
+
+        // Add water splash particles
+        function createSplash() {
+            const splash = document.createElement('div');
+            splash.style.cssText = `
+                position: fixed;
+                width: 10px;
+                height: 10px;
+                background: #00b4d8;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: splashUp 2s ease-out forwards;
+            `;
+            document.body.appendChild(splash);
+            
+            setTimeout(() => splash.remove(), 2000);
+        }
+
+        const splashStyle = `
+            @keyframes splashUp {
+                0% { transform: translateY(0) scale(1); opacity: 1; }
+                100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+            }
+        `;
+        if (!document.querySelector('style#splashStyle')) {
+            const style = document.createElement('style');
+            style.id = 'splashStyle';
+            style.textContent = splashStyle;
+            document.head.appendChild(style);
+        }
+
+        // Create splashes periodically
+        setInterval(createSplash, 3000);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 119, 182, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 119, 182, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
