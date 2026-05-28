@@ -533,7 +533,7 @@ z-index: 10;
 
     <footer>
         <p>© 2024 Krishna Fun Water Park. All rights reserved. | Kathogar, UP</p>
-        <p>Book: <a href="tel:8009919667" style="color: #ffd23f;">80099 19667</a> | <a href="tel:9076796856" style="color: #ffd23f;">90767 96856</a></p>
+        <p>Book: <a href="tel:9076796856" style="color: #ffd23f;">9076796856</a> | <a href="tel:9076796856" style="color: #ffd23f;">90767 96856</a></p>
     </footer>
 
     <script>
@@ -546,25 +546,27 @@ z-index: 10;
                 });
             });
         });
+      document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        // Booking form submission
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            data.totalAmount = data.people * 150;
-            
-            // Show success message
-            alert(`🎉 Booking Confirmed!\n\nName: ${data.fullName}\nWhatsApp: ${data.whatsapp}\nDate: ${data.visitDate}\nPeople: ${data.people}\nTotal: ₹${data.totalAmount}\n\nOwner will contact you instantly! 💦`);
-            
-            // Here you would typically send data to server
-            console.log('Booking Data:', data);
-            
-            // Reset form
-            this.reset();
-        });
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+
+    const message =
+`🎉 New Booking!
+
+Name: ${data.name}
+Customer WhatsApp: ${data.whatsapp}
+Visit Date: ${data.visitDate}
+People: ${data.people}`;
+
+    window.open(
+      `https://wa.me/919076796856?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+
+    this.reset();
+});
 
         // Set default date to next available weekend
         const today = new Date();
@@ -617,6 +619,27 @@ z-index: 10;
                 header.style.background = 'rgba(0, 119, 182, 0.95)';
             }
         });
+function sendBookingOnWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const whatsapp = document.getElementById("whatsapp").value;
+    const visitDate = document.getElementById("visitDate").value;
+    const people = document.getElementById("people").value;
+
+    const message =
+`🎉 New Booking!
+
+Name: ${name}
+Customer WhatsApp: ${whatsapp}
+Visit Date: ${visitDate}
+People: ${people}`;
+
+    window.open(
+      `https://wa.me/919076796856?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+}
     </script>
 </body>
 </html>
