@@ -380,7 +380,14 @@
             margin: 2rem;
             padding: 4rem;
         }
-    </style>
+      <style>
+.hero {
+  background: url("your-image.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 300px;
+}
+</style>
 </head>
 <body>
     <header>
@@ -407,14 +414,12 @@ url('/hero-bg.png');
 /* other desktop CSS bhi yahan ho sakta hai */
 
 /* 👇 YAHAN SE START KARO @media */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
   .hero {
-    background-size: 100% 100%;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: 200px;
+    background-position: center top;
+    min-height: 220px;
   }
-}
+    }
     padding-top: 120px;
 margin: 0;
 overflow: hidden;
