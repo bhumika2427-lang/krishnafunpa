@@ -386,16 +386,14 @@
 <head>
   <style>
       .hero{
-    background-image: url("./hero-bg.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
     width:100%;
-    height:100vh;
+}
 
-    position:relative;
-      }
+.hero-img{
+    width:100%;
+    height:auto;
+    display:block;
+}
     </style>
 </head>
 <body>
@@ -412,7 +410,10 @@
 
     <!-- Hero Section -->
   <section id="home" class="hero">
-</section>
+
+    <img src="hero-bg.png" class="hero-img">
+
+  </section>
     <!-- Stats -->
     <div class="stats">
         <div class="stat-card">
