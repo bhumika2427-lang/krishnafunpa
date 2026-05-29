@@ -402,7 +402,17 @@ url('/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    }
+}
+
+/* 👇 yahan se mobile rule start hota hai */
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 250px;
+  }
+}
     padding-top: 120px;
 margin: 0;
 overflow: hidden;
