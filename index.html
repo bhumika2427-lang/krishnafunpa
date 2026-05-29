@@ -382,13 +382,17 @@
         }
       <style>
 .hero {
-  background: url("your-image.png") no-repeat center center;
+  background: url("hero.png") no-repeat center;
   background-size: cover;
   width: 100%;
-  min-height: 300px;
+  height: 300px;
+  position: relative;
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
 }
 </style>
-</head>
+      </head>
 <body>
     <header>
         <nav>
@@ -405,46 +409,28 @@
   <section id="home" class="hero" style="
     background: linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
 url('/hero-bg.png');
-    .hero {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+    <div class="hero">
 
-/* other desktop CSS bhi yahan ho sakta hai */
-
-/* 👇 YAHAN SE START KARO @media */
-    @media (max-width: 768px) {
-  .hero {
-    background-position: center top;
-    background repeat: no repeat;
-    min-height: 220px;
-  }
-    }
-    padding-top: 120px;
-margin: 0;
-overflow: hidden;
-padding: 0;
-    position: relative;
-text-align: center;
-color: white;
-  display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-    <a href="#booking" style="
-position: absolute;
-bottom: 80px;
-left: 50%;
-transform: translateX(-50%);
-width: 250px;
-height: 80px;
-display: block;
-z-index: 10;
-">
-</a>
-">
-     </section>
+  <a href="#booking" style="
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-decoration: none;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+  ">
+    Book Now
+  </a>
+</div>
+   </section>
     <!-- Stats -->
     <div class="stats">
         <div class="stat-card">
