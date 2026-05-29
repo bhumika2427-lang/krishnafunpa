@@ -404,13 +404,15 @@ url('/hero-bg.png');
   background-repeat: no-repeat;
 }
 
-/* 👇 yahan se mobile rule start hota hai */
+/* other desktop CSS bhi yahan ho sakta hai */
+
+/* 👇 YAHAN SE START KARO @media */
 @media (max-width: 768px) {
   .hero {
-    background-size: cover;
-    background-position: center top;
+    background-size: 100% 100%;
+    background-position: top center;
     background-repeat: no-repeat;
-    height: 250px;
+    min-height: 200px;
   }
 }
     padding-top: 120px;
